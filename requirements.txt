@@ -1,0 +1,26 @@
+# Image Colorization Engine - Python Dependencies
+# Install:  pip install -r requirements.txt
+
+# Core ML Framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Backend Server
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+python-multipart>=0.0.6
+
+# Frontend Dashboard
+streamlit>=1.28.0
+
+# Image Processing & Scientific Computing
+opencv-python-headless>=4.8.0
+scikit-image>=0.21.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# HTTP Client
+requests>=2.31.0
+
+# System Monitoring
+psutil>=5.9.0

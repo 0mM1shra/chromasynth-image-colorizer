@@ -1,0 +1,29 @@
+# ── Virtual Environment ──
+venv/
+.venv/
+
+# ── Python Cache ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ── PyTorch Model Cache ──
+*.pth
+checkpoints/
+
+# ── IDE ──
+.vscode/
+.idea/
+
+# ── OS ──
+Thumbs.db
+.DS_Store
+
+# ── Jupyter ──
+.ipynb_checkpoints/
+
+# ── Distribution ──
+dist/
+build/
+*.egg-info/
