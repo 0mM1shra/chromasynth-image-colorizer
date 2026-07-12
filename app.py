@@ -12,11 +12,23 @@ Launch:  streamlit run app.py --server.port 8501
 from __future__ import annotations
 
 import io
+import subprocess
+import sys
+import time
 from typing import Optional
 
 import requests
 import streamlit as st
 from PIL import Image
+
+# ─── Background Server Autostart ──────────────────────────────────────────
+# Automatically starts main.py if backend server is not detected (for single-container cloud hosting)
+try:
+    requests.get("http://localhost:4500/health", timeout=1)
+except Exception:
+    # Launch main.py in the background using the same Python interpreter
+    subprocess.Popen([sys.executable, "main.py"])
+    time.sleep(6)
 
 # ─── Page Configuration ───────────────────────────────────────────────────
 
