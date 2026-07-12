@@ -4,6 +4,9 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![CUDA](https://img.shields.io/badge/CUDA-76B900?style=flat&logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-zone)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit%20Cloud-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://chromasynth-image-colorizer.streamlit.app/)
+
+**🌐 Try the Live Demo here: [chromasynth-image-colorizer.streamlit.app](https://chromasynth-image-colorizer.streamlit.app/)**
 
 A production-grade, modular **Model-as-a-Service (MaaS)** pipeline that colorizes grayscale images using a deep convolutional encoder-decoder neural network (ECCV 2016 model by Richard Zhang et al.). The system features a modular FastAPI inference backend optimized for NVIDIA CUDA GPUs and an interactive Streamlit dashboard displaying live SDE telemetry (VRAM/RAM footprint deltas, processing latency) and DSML pipeline analysis.
 
