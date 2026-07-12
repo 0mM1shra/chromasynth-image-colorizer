@@ -30,6 +30,8 @@ except Exception:
     subprocess.Popen([sys.executable, "main.py"])
     time.sleep(6)
 
+BACKEND_URL = "http://localhost:4500"
+
 # ─── Page Configuration ───────────────────────────────────────────────────
 
 st.set_page_config(
@@ -157,22 +159,12 @@ st.markdown(
 # ─── Sidebar ──────────────────────────────────────────────────────────────
 
 with st.sidebar:
-    st.markdown("### ⚙️ Configuration")
-
-    backend_url = st.text_input(
-        "Backend URL",
-        value="http://localhost:4500",
-        help="Base URL of the running FastAPI colorization server",
-    )
-
-    st.markdown('<div class="styled-divider"></div>', unsafe_allow_html=True)
-
     # Health check button
     st.markdown("### 🏥 System Status")
 
     if st.button("🔍 Check Backend Health", use_container_width=True):
         try:
-            resp = requests.get(f"{backend_url}/health", timeout=5)
+            resp = requests.get(f"{BACKEND_URL}/health", timeout=5)
             if resp.status_code == 200:
                 health = resp.json()
                 st.markdown(
@@ -267,7 +259,7 @@ with tab_app:
 
             try:
                 response = requests.post(
-                    f"{backend_url}/translate",
+                    f"{BACKEND_URL}/translate",
                     files={"file": (file_name, file_bytes, uploaded_file.type)},
                     timeout=30,
                 )
@@ -294,7 +286,7 @@ with tab_app:
                 st.error(
                     "**Cannot connect to the backend server.**\n\n"
                     "Make sure the FastAPI server is running.\n"
-                    f"Expected at: `{backend_url}`"
+                    f"Expected at: `{BACKEND_URL}`"
                 )
             except requests.Timeout:
                 status_container.empty()
