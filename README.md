@@ -22,6 +22,23 @@ Below are actual results from the engine showing the side-by-side reconstruction
 
 ---
 
+## 📂 Repository Structure
+
+```
+├── colorizer/               # Core neural network modules
+│   ├── __init__.py          # Exposes clean factory interfaces & helpers
+│   ├── base_color.py        # Abstract BaseColor class defining Lab normalization constants
+│   ├── eccv16.py            # PyTorch implementation of the 8-block ECCV 2016 CNN architecture
+│   └── util.py              # Image utilities handling color transformations and bilinear scaling
+├── main.py                  # FastAPI Model-as-a-Service wrapper with lifespan GPU cache pinning
+├── metrics.py               # Custom context-manager profiler (VRAM/RAM) and DSML indicators (PSNR/SSIM)
+├── app.py                   # State-persistent Streamlit client with interactive dashboards
+├── requirements.txt         # Pinned packages for deployment compatibility
+└── README.md                # Presentation documentation
+```
+
+---
+
 ## 🔬 Deep Learning Architecture & Pipeline
 
 Unlike simple networks that try to regress directly to red, green, and blue ($RGB$) pixel intensities, this engine frames colorization as a **multinomial classification task within the CIELAB ($Lab$) color space**.
